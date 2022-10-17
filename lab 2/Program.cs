@@ -56,10 +56,15 @@ namespace Singleton
         {
             
             Logger logger = Logger.getInstance();
+            Logger logger2 = Logger.getInstance();
             logger.Clear();
+            logger2.Clear();
             logger.saveErr(message: "error", code: 404);
-
+            logger.Clear();
+            logger2.saveErr(message: "error2", code: 404);
+            logger.saveErr(message: "error", code: 404);
             logger.ShowLog();
+            logger2.ShowLog();
             Console.ReadLine();
         }
     }
